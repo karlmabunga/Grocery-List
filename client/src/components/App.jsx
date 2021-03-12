@@ -8,22 +8,16 @@ const list = [{item: 'pizza', quantity: 2}, {item: 'ice cream', quantity: 2}, {i
 export default function App () {
 
   const [groceries, setGroceries] = useState(list);
+  const addItem = (grocery) => {
+    setGroceries([...groceries, grocery]);
+  };
+  console.log('14: ', groceries);
+
   return (
     <div>
       <Header />
-      <Form />
+      <Form addItem={addItem}/>
       <List groceries={groceries}/>
     </div>
   )
-};
-
-const handleFormInput = () => {
-  const [value, setValue] = useState();
-  function handleChange(e) {
-    setValue(e.target.value);
-  };
-  return {
-    value,
-    onChange: handleChange,
-  };
 };

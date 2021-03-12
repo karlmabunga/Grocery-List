@@ -5,10 +5,10 @@ export default function List(props) {
   return (
     <div>
       <ul className="groceries">
-        {props.groceries.map((item) => (
-          <ListEntry item={item.item} quantity={item.quantity} />
+        {props.groceries.map((item, index) => (
+          <ListEntry item={item.item} quantity={item.quantity} key={index} />
         ))}
       </ul>
     </div>
   )
-}
+};
