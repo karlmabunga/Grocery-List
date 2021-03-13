@@ -11,13 +11,17 @@ export default function App () {
   const addItem = (grocery) => {
     setGroceries([...groceries, grocery]);
   };
-  console.log('14: ', groceries);
+
+  const deleteGrocery = (id) => {
+    groceries.splice(id, 1)
+    setGroceries([...groceries])
+  }
 
   return (
     <div>
       <Header />
       <Form addItem={addItem}/>
-      <List groceries={groceries}/>
+      <List groceries={groceries} deleteGrocery={deleteGrocery}/>
     </div>
   )
 };

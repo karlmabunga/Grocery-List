@@ -1,12 +1,12 @@
 import React from 'react';
 import ListEntry from './ListEntry.jsx';
 
-export default function List(props) {
+export default function List({groceries, deleteGrocery}) {
   return (
     <div>
       <ul className="groceries">
-        {props.groceries.map((item, index) => (
-          <ListEntry item={item.item} quantity={item.quantity} key={index} />
+        {groceries.map((item, index) => (
+          <ListEntry item={item.item} quantity={item.quantity} key={index} index={index} deleteGrocery={deleteGrocery} />
         ))}
       </ul>
     </div>
