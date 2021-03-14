@@ -9,7 +9,7 @@ export default function ListEntry({item, quantity, index, deleteGrocery}) {
   return (
     <div>
       <li>{item} {quantity}</li>
-      {isEditing ? <button onClick={() => { deleteGrocery(id)}}>Delete</button> : null}
+      <button onClick={() => { deleteGrocery(id)}}>Delete</button>
     </div>
   )
 }
